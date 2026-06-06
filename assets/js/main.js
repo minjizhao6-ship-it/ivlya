@@ -18,60 +18,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  var redirectInput = document.getElementById("form-redirect");
+  if (redirectInput) {
+    redirectInput.value = new URL("thank-you.html", window.location.href).href;
+  }
+
   var quoteForm = document.getElementById("quote-form");
   if (quoteForm) {
-    var formStatus = document.getElementById("form-status");
     var submitButton = quoteForm.querySelector('button[type="submit"]');
-
-    quoteForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      var accessKey = quoteForm.getAttribute("data-access-key");
-      if (!accessKey || accessKey === "YOUR_ACCESS_KEY_HERE") {
-        if (formStatus) {
-          formStatus.hidden = false;
-          formStatus.textContent = "Form is not configured yet. Please contact us on WhatsApp.";
-          formStatus.className = "form-status form-status-error";
-        }
-        return;
-      }
-
+    quoteForm.addEventListener("submit", function () {
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = "Sending...";
       }
-
-      var formData = new FormData(quoteForm);
-      formData.append("access_key", accessKey);
-      formData.append("subject", "New IVLYA quote request");
-      formData.append("from_name", "IVLYA Website");
-
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          if (data.success) {
-            window.location.href = quoteForm.getAttribute("action") || "thank-you.html";
-            return;
-          }
-
-          throw new Error(data.message || "Submission failed");
-        })
-        .catch(function () {
-          if (formStatus) {
-            formStatus.hidden = false;
-            formStatus.textContent = "Something went wrong. Please try again or contact us on WhatsApp.";
-            formStatus.className = "form-status form-status-error";
-          }
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = "Request a Quote";
-          }
-        });
     });
   }
 });

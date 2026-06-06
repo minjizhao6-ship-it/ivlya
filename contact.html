@@ -31,9 +31,12 @@
           <li>Message</li>
         </ul>
       </div>
-      <form class="contact-form" id="quote-form" name="quote-request" method="POST" action="thank-you.html" data-access-key="1d063c0a-5d72-40cc-9917-fe0e6217bf0a">
+      <form class="contact-form" id="quote-form" name="quote-request" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="1d063c0a-5d72-40cc-9917-fe0e6217bf0a">
+        <input type="hidden" name="subject" value="New IVLYA quote request">
+        <input type="hidden" name="from_name" value="IVLYA Website">
+        <input type="hidden" name="redirect" id="form-redirect" value="">
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
-        <p class="form-status" id="form-status" hidden role="status"></p>
         <div class="form-row">
           <div class="form-field">
             <label for="name">Name</label>
