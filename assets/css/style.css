@@ -591,6 +591,23 @@ p {
   box-shadow: var(--shadow);
 }
 
+.hidden {
+  display: none !important;
+}
+
+.form-status {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.form-status-error {
+  color: #842029;
+  background: #f8d7da;
+  border: 1px solid #f1aeb5;
+}
+
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
