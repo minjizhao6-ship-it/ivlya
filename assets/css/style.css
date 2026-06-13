@@ -222,6 +222,20 @@ p {
   box-shadow: var(--shadow);
 }
 
+.hero-banner {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  box-shadow: var(--shadow);
+}
+
+.hero-banner img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .logo-asset {
   overflow: hidden;
   border-radius: 8px;
