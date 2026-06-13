@@ -1,0 +1,9 @@
+Host github-ivlya
+  HostName ssh.github.com
+  User git
+  Port 443
+  IdentityFile C:/Users/Administrator/.ssh/id_ed25519
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile NUL
+  ProxyCommand E:/ivlya/connect.exe -S 127.0.0.1:10808 %h %p

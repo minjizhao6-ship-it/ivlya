@@ -1,0 +1,21 @@
+﻿# secrets
+id_ed25519*
+*.pem
+*.key
+.env
+.env.*
+
+# archives
+*.zip
+
+# dependencies / build
+node_modules/
+dist/
+build/
+.next/
+.vercel/
+.netlify/
+
+# system
+.DS_Store
+Thumbs.db
