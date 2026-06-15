@@ -149,6 +149,17 @@ a {
   padding: 84px 0 44px;
 }
 
+.hero-full-banner {
+  padding: 0;
+  background: var(--white);
+}
+
+.hero-full-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
