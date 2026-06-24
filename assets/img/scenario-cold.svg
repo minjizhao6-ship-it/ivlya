@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Cold chain packaging labels</title>
+  <rect width="640" height="420" fill="#edf8ff"/>
+  <path d="M96 316h448v38H96z" fill="#c9e6f8"/>
+  <rect x="138" y="112" width="160" height="190" rx="18" fill="#ffffff"/>
+  <rect x="342" y="92" width="168" height="210" rx="22" fill="#ffffff"/>
+  <path d="M170 168h82M170 198h56M374 154h92M374 186h68M374 240h92" stroke="#0d3f8a" stroke-width="9" stroke-linecap="round"/>
+  <rect x="374" y="212" width="92" height="17" rx="8" fill="#ff9f1a"/>
+  <g stroke="#7bbdea" stroke-width="7" stroke-linecap="round">
+    <path d="M96 92v54M69 119h54M78 101l36 36M114 101l-36 36"/>
+    <path d="M550 118v54M523 145h54M532 127l36 36M568 127l-36 36"/>
+  </g>
+</svg>

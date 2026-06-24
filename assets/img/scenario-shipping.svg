@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">E-commerce shipping labels</title>
+  <rect width="640" height="420" fill="#eef5ff"/>
+  <path d="M0 300c105-42 188-34 250 24 72 68 196 69 390 3v93H0z" fill="#d4e5fa"/>
+  <rect x="92" y="132" width="190" height="142" rx="8" fill="#d9b176"/>
+  <path d="M92 170h190M188 132v142" stroke="#bb9158" stroke-width="5"/>
+  <rect x="124" y="188" width="92" height="58" rx="5" fill="#fff"/>
+  <path d="M140 207h56M140 226h40" stroke="#0d3f8a" stroke-width="7" stroke-linecap="round"/>
+  <rect x="360" y="112" width="180" height="180" rx="28" fill="#fff"/>
+  <path d="M395 158h90M395 190h62M395 244h90" stroke="#0d3f8a" stroke-width="10" stroke-linecap="round"/>
+  <rect x="395" y="212" width="90" height="18" rx="9" fill="#ff9f1a"/>
+</svg>

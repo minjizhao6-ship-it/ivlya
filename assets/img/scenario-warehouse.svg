@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Warehouse inventory labeling</title>
+  <rect width="640" height="420" fill="#f4f8ff"/>
+  <rect x="82" y="96" width="92" height="238" rx="8" fill="#0d3f8a"/>
+  <rect x="274" y="96" width="92" height="238" rx="8" fill="#0d3f8a"/>
+  <rect x="466" y="96" width="92" height="238" rx="8" fill="#0d3f8a"/>
+  <g fill="#d9b176">
+    <rect x="104" y="124" width="146" height="72" rx="6"/>
+    <rect x="104" y="220" width="146" height="72" rx="6"/>
+    <rect x="296" y="124" width="146" height="72" rx="6"/>
+    <rect x="296" y="220" width="146" height="72" rx="6"/>
+  </g>
+  <g fill="#fff">
+    <rect x="122" y="146" width="58" height="28" rx="4"/>
+    <rect x="122" y="242" width="58" height="28" rx="4"/>
+    <rect x="314" y="146" width="58" height="28" rx="4"/>
+    <rect x="314" y="242" width="58" height="28" rx="4"/>
+  </g>
+  <path d="M500 146h42M500 166h30M500 242h42M500 262h30" stroke="#ff9f1a" stroke-width="8" stroke-linecap="round"/>
+</svg>

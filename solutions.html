@@ -1,41 +1,269 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="IVLYA packaging solutions for apparel, beauty, jewelry, Amazon FBA, Shopify, subscription boxes, and 3PL warehouses.">
-  <title>Solutions | IVLYA</title>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7H6PZHX00"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-W7H6PZHX00');
-  </script>
+  <title>Solutions - IVLYA Thermal Label Supply</title>
+  <meta name="description" content="IVLYA thermal adhesive label solutions for Shopify, Amazon FBA, warehouse logistics, cold-chain packaging, and high-volume fulfillment operations.">
+  <link rel="icon" type="image/png" href="img/logo-2.png">
+  <style>
+    :root {
+      --navy: #071b3a;
+      --blue: #0d3f8a;
+      --blue-2: #1f5fc4;
+      --orange: #ff9f1a;
+      --orange-2: #ee8700;
+      --text: #15253b;
+      --muted: #60728c;
+      --bg: #f6f9ff;
+      --card: #fff;
+      --border: #dfe8f5;
+      --shadow: 0 18px 42px rgba(13, 63, 138, .10);
+      --shadow-strong: 0 28px 64px rgba(13, 63, 138, .18);
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { margin: 0 auto; width: min(var(--max), calc(100% - 32px)); }
+    .site-header { backdrop-filter: blur(10px); background: rgba(255,255,255,.97); border-bottom: 1px solid #edf2fb; position: sticky; top: 0; z-index: 40; }
+    .header-inner { align-items: center; display: flex; gap: 24px; min-height: 78px; justify-content: space-between; }
+    .logo-img { height: 50px; width: auto; }
+    .nav { align-items: center; color: #244268; display: flex; font-size: 15px; font-weight: 800; gap: 24px; }
+    .nav a { padding: 8px 0; position: relative; }
+    .nav a::after { background: linear-gradient(90deg, var(--blue-2), var(--orange)); border-radius: 999px; bottom: 0; content: ""; height: 3px; left: 50%; opacity: 0; position: absolute; right: 50%; transition: .25s ease; }
+    .nav a:hover, .nav a.active { color: var(--blue); }
+    .nav a:hover::after, .nav a.active::after { left: 0; opacity: 1; right: 0; }
+    .header-actions { align-items: center; display: flex; gap: 12px; }
+    .menu-toggle { display: none; }
+    .btn { align-items: center; border: 1px solid transparent; border-radius: 14px; cursor: pointer; display: inline-flex; font-size: 15px; font-weight: 900; justify-content: center; min-height: 50px; padding: 0 22px; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, #ffb13b, var(--orange), var(--orange-2)); box-shadow: 0 14px 24px rgba(255,159,26,.28); color: #fff; }
+    .btn-secondary { background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.32); color: #fff; }
+    .btn-light { background: #fff; border-color: var(--border); color: var(--blue); }
+    .section { padding: 88px 0; }
+    .section-soft { background: linear-gradient(180deg, #fff 0%, var(--bg) 100%); }
+    .section-title { color: var(--navy); font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: 0; line-height: 1.15; margin: 0 auto 16px; max-width: 900px; text-align: center; }
+    .section-subtitle { color: var(--muted); font-size: 17px; margin: 0 auto 44px; max-width: 780px; text-align: center; }
+    .hero { background: radial-gradient(circle at 78% 16%, rgba(255,159,26,.24), transparent 26%), radial-gradient(circle at 18% 84%, rgba(31,95,196,.24), transparent 28%), linear-gradient(112deg, var(--navy) 0%, var(--blue) 54%, #8aa4c5 100%); color: #fff; overflow: hidden; padding: 98px 0; }
+    .hero-grid { align-items: center; display: grid; gap: 48px; grid-template-columns: 1.05fr .95fr; }
+    .eyebrow { color: #ffd18a; font-size: 13px; font-weight: 900; letter-spacing: .08em; margin-bottom: 18px; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(42px, 5vw, 68px); font-weight: 900; letter-spacing: 0; line-height: 1.04; max-width: 820px; }
+    .hero p { color: rgba(255,255,255,.88); font-size: 19px; margin-top: 22px; max-width: 700px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .hero-panel { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.24); border-radius: 28px; box-shadow: 0 30px 70px rgba(0,0,0,.20); padding: 28px; }
+    .hero-panel-grid { display: grid; gap: 14px; }
+    .hero-stat { background: rgba(255,255,255,.92); border-radius: 18px; color: var(--navy); padding: 18px; }
+    .hero-stat strong { display: block; font-size: 28px; line-height: 1; margin-bottom: 6px; }
+    .hero-stat span { color: var(--muted); font-size: 14px; font-weight: 800; }
+    .grid-3 { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); }
+    .grid-6 { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow); height: 100%; padding: 28px; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+    .card:hover { border-color: rgba(13,63,138,.34); box-shadow: var(--shadow-strong); transform: translateY(-4px); }
+    .icon { align-items: center; background: linear-gradient(135deg, #eef5ff, #fff 58%, #fff4df); border: 1px solid #dce8fb; border-radius: 18px; display: flex; font-size: 30px; height: 66px; justify-content: center; margin-bottom: 22px; width: 66px; }
+    .card h3 { color: var(--navy); font-size: 22px; line-height: 1.25; margin-bottom: 12px; }
+    .card p { color: var(--muted); font-size: 15px; }
+    .use-card { overflow: hidden; padding: 0; }
+    .industry-visual-grid { display: grid; gap: 22px; grid-template-columns: repeat(2, 1fr); margin: 0 auto 34px; max-width: 1180px; }
+    .industry-visual { background: #fff; border: 1px solid var(--border); border-radius: 26px; box-shadow: var(--shadow); overflow: hidden; }
+    .industry-visual img { height: auto; width: 100%; }
+    .use-top { background: linear-gradient(135deg, #eaf2ff, #fff7e8); border-bottom: 1px solid var(--border); min-height: 150px; padding: 26px; }
+    .use-top .icon { margin-bottom: 16px; }
+    .use-body { padding: 26px; }
+    .use-body p + p { margin-top: 12px; }
+    .impact-card { min-height: 220px; }
+    .system-steps { display: grid; gap: 22px; }
+    .step { align-items: start; background: #fff; border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); display: grid; gap: 22px; grid-template-columns: 86px 1fr; padding: 28px; transition: transform .25s ease, box-shadow .25s ease; }
+    .step:hover { box-shadow: var(--shadow-strong); transform: translateY(-4px); }
+    .step-number { align-items: center; background: var(--blue); border-radius: 22px; color: #fff; display: flex; font-size: 26px; font-weight: 900; height: 72px; justify-content: center; width: 72px; }
+    .step h3 { color: var(--navy); font-size: 25px; margin-bottom: 10px; }
+    .step p { color: var(--muted); }
+    .comparison-table { background: #fff; border: 1px solid var(--border); border-radius: 26px; box-shadow: var(--shadow); overflow: hidden; }
+    .compare-row { display: grid; grid-template-columns: 1fr 1.25fr 1.25fr; }
+    .compare-row > div { border-bottom: 1px solid #edf2fb; padding: 20px; }
+    .compare-row:last-child > div { border-bottom: 0; }
+    .compare-head { background: var(--navy); color: #fff; font-weight: 900; }
+    .compare-topic { color: var(--navy); font-weight: 900; }
+    .ivlya-col { background: #f4f8ff; color: var(--blue); font-weight: 900; }
+    .typical-col { color: var(--muted); }
+    .risk-grid { align-items: stretch; display: grid; gap: 28px; grid-template-columns: .95fr 1.05fr; }
+    .risk-list { background: #fff; border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); padding: 30px; }
+    .risk-list h3 { color: var(--navy); font-size: 28px; margin-bottom: 18px; }
+    .risk-list ul { display: grid; gap: 14px; list-style: none; }
+    .risk-list li { color: var(--muted); font-weight: 800; padding-left: 28px; position: relative; }
+    .risk-list li::before { color: var(--orange); content: "•"; font-size: 28px; left: 4px; line-height: 1; position: absolute; top: -2px; }
+    .prevention { background: linear-gradient(135deg, var(--navy), var(--blue)); border-radius: 24px; box-shadow: var(--shadow-strong); color: #fff; padding: 34px; }
+    .prevention h3 { font-size: 30px; line-height: 1.15; margin-bottom: 18px; }
+    .prevention p { color: rgba(255,255,255,.86); margin-bottom: 16px; }
+    .trust-cues { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .trust-cues span { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.20); border-radius: 999px; color: #fff; font-size: 13px; font-weight: 900; padding: 8px 12px; }
+    .cta { background: radial-gradient(circle at 80% 20%, rgba(255,159,26,.25), transparent 28%), linear-gradient(135deg, var(--navy), var(--blue)); border-radius: 30px; color: #fff; overflow: hidden; padding: 48px; position: relative; text-align: center; }
+    .cta::before { animation: pulse-bg 6s ease-in-out infinite; background: rgba(255,255,255,.10); border-radius: 999px; content: ""; height: 260px; left: -90px; position: absolute; top: -110px; width: 260px; }
+    @keyframes pulse-bg { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+    .cta h2 { font-size: clamp(34px, 4vw, 54px); font-weight: 900; line-height: 1.08; margin: 0 auto 18px; max-width: 860px; position: relative; }
+    .cta p { color: rgba(255,255,255,.86); font-size: 18px; margin: 0 auto 28px; max-width: 680px; position: relative; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; position: relative; }
+    .cta-trust { color: rgba(255,255,255,.78); font-size: 14px; font-weight: 800; margin-top: 18px; position: relative; }
+    .site-footer { background: var(--navy); color: #fff; padding: 28px 0; }
+    .footer-bottom { align-items: center; color: #a9bfdf; display: flex; flex-wrap: wrap; font-size: 14px; gap: 18px; justify-content: space-between; }
+    @media (max-width: 1180px) {
+      .grid-6 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 980px) {
+      .nav { display: none; }
+      .menu-toggle { align-items: center; background: #fff; border: 1px solid var(--border); border-radius: 12px; display: flex; height: 42px; justify-content: center; width: 42px; }
+      .hero-grid, .grid-3, .grid-6, .risk-grid, .industry-visual-grid { grid-template-columns: 1fr; }
+      .compare-row { grid-template-columns: 1fr; }
+      .compare-head .compare-topic { display: none; }
+      .section { padding: 64px 0; }
+      .step { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .header-actions .btn { display: none; }
+      .logo-img { height: 44px; }
+      .hero { padding: 72px 0; }
+      .hero-actions .btn, .cta-actions .btn { width: 100%; }
+      .cta { padding: 26px; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo-nav.png" alt="IVLYA"></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a class="active" href="solutions.html">Solutions</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></nav></div></header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="IVLYA Home"><img class="logo-img" src="img/logo-1.png" alt="IVLYA"></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><a href="products.html">Products</a><a class="active" href="solutions.html">Solutions</a><a href="about.html">About Us</a><a href="shipping-payment.html">Shipping & Payment</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions"><a class="btn btn-primary" href="contact.html">Request Quote</a><button class="menu-toggle" type="button" aria-label="Open menu"><span></span></button></div>
+    </div>
+  </header>
   <main>
-    <section class="page-hero"><div class="container"><p class="eyebrow">Solutions</p><h1>Packaging solutions matched to product category, channel, and fulfillment model.</h1><p>Whether you sell apparel, beauty products, jewelry, marketplace goods, subscription boxes, or manage a warehouse, IVLYA helps build a practical packaging setup.</p></div></section>
-    <section class="section"><div class="container"><div class="grid grid-3">
-      <article class="card solution-card"><div class="icon-box">AP</div><h3>Apparel Packaging Solution</h3><p>Poly mailers, tissue paper, stickers, thank you cards, and size labels for fashion brands.</p></article>
-      <article class="card solution-card"><div class="icon-box">BE</div><h3>Beauty Brand Packaging Solution</h3><p>Bubble mailers, inserts, labels, boxes, and branded wrapping for skincare and cosmetics.</p></article>
-      <article class="card solution-card"><div class="icon-box">JE</div><h3>Jewelry Packaging Solution</h3><p>Protective mailers, delicate inserts, stickers, and premium presentation materials.</p></article>
-      <article class="card solution-card"><div class="icon-box">FBA</div><h3>Amazon FBA Packaging Solution</h3><p>Labels, shipping boxes, poly bags, barcodes, and prep supplies for FBA workflows.</p></article>
-      <article class="card solution-card"><div class="icon-box">SH</div><h3>Shopify Packaging Solution</h3><p>Custom mailers, branded cards, labels, inserts, and boxes for DTC shipping.</p></article>
-      <article class="card solution-card"><div class="icon-box">SB</div><h3>Subscription Box Packaging Solution</h3><p>Shipping boxes, tissue paper, inserts, stickers, and recurring packaging supply planning.</p></article>
-      <article class="card solution-card"><div class="icon-box">3PL</div><h3>3PL & Warehouse Supply Solution</h3><p>Bulk labels, tape, mailers, cartons, and packing materials for daily fulfillment volume.</p></article>
-    </div></div></section>
-    <section class="section section-soft"><div class="container"><div class="section-head"><div><p class="eyebrow">Channel fit</p><h2>Built for sellers across major commerce platforms.</h2></div><p>IVLYA supports businesses selling through Shopify, Amazon, TikTok Shop, Etsy, and direct-to-consumer websites, with packaging choices that balance protection, branding, and shipping practicality.</p></div><div class="grid grid-3"><article class="card"><h3>Online Storefronts</h3><p>Packaging that strengthens unboxing and repeat purchase campaigns.</p></article><article class="card"><h3>Marketplaces</h3><p>Shipping supplies and labels for platform-oriented fulfillment needs.</p></article><article class="card"><h3>Warehouse Teams</h3><p>Consistent supply items for picking, packing, labeling, and dispatch.</p></article></div></div></section>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">B2B Fulfillment Label Solutions</div>
+          <h1>Label Solutions for Daily Fulfillment Pressure</h1>
+          <p>Every shipping workflow depends on a small label doing its job. IVLYA supports stable printing, strong adhesion, and supply reliability for high-volume operations.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Get Free Sample</a>
+            <a class="btn btn-secondary" href="contact.html">Request Quote</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-panel-grid">
+            <div class="hero-stat"><strong>4x6</strong><span>Core format for eCommerce shipping labels</span></div>
+            <div class="hero-stat"><strong>120+</strong><span>Countries supported with global shipping experience</span></div>
+            <div class="hero-stat"><strong>1 hour</strong><span>Fast response for sample and quote requests</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Solutions Built Around Real Fulfillment Use Cases</h2>
+        <p class="section-subtitle">Each scenario has different failure risks. IVLYA focuses on label stability where operational errors become expensive.</p>
+        <div class="industry-visual-grid">
+          <div class="industry-visual"><img src="img/8001.png" alt="Thermal label printing samples for different sizes and applications"></div>
+          <div class="industry-visual"><img src="img/8002.png" alt="Thermal label applications across supermarkets, pharmaceuticals, logistics, warehousing, food, and apparel"></div>
+        </div>
+        <div class="grid-3">
+          <article class="card use-card">
+            <div class="use-top"><div class="icon">🛍️</div><h3>E-commerce Shipping</h3></div>
+            <div class="use-body"><p>Used for daily Shopify, marketplace, and DTC parcel shipping workflows.</p><p>Bad labels cause failed scans, return delays, and carrier handoff issues.</p><p>Stable print and adhesion keep order fulfillment moving.</p></div>
+          </article>
+          <article class="card use-card">
+            <div class="use-top"><div class="icon">🏷️</div><h3>Warehouse Inventory</h3></div>
+            <div class="use-body"><p>Used for shelf IDs, SKU tracking, inbound checks, and outbound carton control.</p><p>Unreadable labels create inventory mismatch and picking errors.</p><p>Consistent readability protects warehouse accuracy.</p></div>
+          </article>
+          <article class="card use-card">
+            <div class="use-top"><div class="icon">❄️</div><h3>Cold-Chain Packaging</h3></div>
+            <div class="use-body"><p>Used for food, pharma, and temperature-sensitive packaging workflows.</p><p>Poor adhesion or fading can break traceability in colder environments.</p><p>Material stability helps labels remain readable and attached.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2 class="section-title">Operational Impact of Better Labels</h2>
+        <p class="section-subtitle">Better labels reduce small failures that compound across printers, warehouses, carriers, and repeat orders.</p>
+        <div class="grid-6">
+          <article class="card impact-card"><div class="icon">🎯</div><h3>Clear Barcodes</h3><p>Reliable barcode contrast supports cleaner scans during warehouse and carrier handoff.</p></article>
+          <article class="card impact-card"><div class="icon">🖨️</div><h3>Smooth Feeding</h3><p>Stable material and roll quality help reduce printer jams and setup waste.</p></article>
+          <article class="card impact-card"><div class="icon">📌</div><h3>Secure Adhesion</h3><p>Labels stay attached to cartons, poly mailers, and common packaging surfaces through transit.</p></article>
+          <article class="card impact-card"><div class="icon">📦</div><h3>Stable Supply</h3><p>Repeat-order continuity helps buyers avoid stockouts during peak fulfillment periods.</p></article>
+          <article class="card impact-card"><div class="icon">💰</div><h3>Cost Efficiency</h3><p>Fewer reprints, fewer failed labels, and less downtime reduce hidden consumable costs.</p></article>
+          <article class="card impact-card"><div class="icon">⚡</div><h3>Fulfillment Speed</h3><p>Reliable labels reduce friction in packing, scanning, sorting, and outbound shipment workflows.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">The IVLYA Supply System</h2>
+        <p class="section-subtitle">A normal product listing does not solve fulfillment risk. IVLYA structures label supply around process control, batch consistency, and long-term reorder reliability.</p>
+        <div class="system-steps">
+          <article class="step"><div class="step-number">01</div><div><h3>Stable Manufacturing System</h3><p>Production planning is built around repeatable thermal label output, helping buyers maintain consistent material, size, roll count, and packing expectations over time.</p></div></article>
+          <article class="step"><div class="step-number">02</div><div><h3>Quality Control Before Shipment</h3><p>Material surface, cutting quality, adhesion, roll winding, and packing are checked before shipment to reduce batch variation and downstream label failure.</p></div></article>
+          <article class="step"><div class="step-number">03</div><div><h3>Repeat Order Optimization System</h3><p>Order specifications, packaging requirements, and shipping preferences can be aligned for faster reorder communication and more predictable long-term supply.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2 class="section-title">IVLYA vs Typical Label Suppliers</h2>
+        <p class="section-subtitle">Procurement buyers need fewer surprises, not just a cheaper roll of labels.</p>
+        <div class="comparison-table">
+          <div class="compare-row compare-head"><div class="compare-topic">Factor</div><div>IVLYA</div><div>Typical Label Suppliers</div></div>
+          <div class="compare-row"><div class="compare-topic">Batch Consistency</div><div class="ivlya-col">Controlled material, coating, cutting, and packing expectations</div><div class="typical-col">Batch differences may appear between orders</div></div>
+          <div class="compare-row"><div class="compare-topic">Supply Stability</div><div class="ivlya-col">Built for repeat orders and peak-season planning</div><div class="typical-col">Often optimized around one-time product supply</div></div>
+          <div class="compare-row"><div class="compare-topic">Printer Compatibility</div><div class="ivlya-col">Supports common Zebra, Rollo, Brother, and direct thermal workflows</div><div class="typical-col">Limited support for printer-fit troubleshooting</div></div>
+          <div class="compare-row"><div class="compare-topic">Adhesion Reliability</div><div class="ivlya-col">Focus on packaging surfaces and transit durability</div><div class="typical-col">Adhesion performance may vary by material source</div></div>
+          <div class="compare-row"><div class="compare-topic">B2B Support</div><div class="ivlya-col">Sample support, quote guidance, shipping advice, reorder communication</div><div class="typical-col">Support often stops after price quotation</div></div>
+          <div class="compare-row"><div class="compare-topic">Reorder System</div><div class="ivlya-col">Specifications can be clarified for repeat purchasing</div><div class="typical-col">Every reorder may require rechecking details</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container risk-grid">
+        <div class="risk-list">
+          <h3>What Happens When Labels Fail?</h3>
+          <ul>
+            <li>Shipping delays during packing or carrier handoff</li>
+            <li>Inventory mismatch caused by unreadable warehouse labels</li>
+            <li>Warehouse scanning errors and picking rework</li>
+            <li>Cost increase from reprints, waste, downtime, and urgent replenishment</li>
+          </ul>
+        </div>
+        <div class="prevention">
+          <h3>IVLYA Works as a Risk Prevention System</h3>
+          <p>Stable print quality reduces scan failures. Strong adhesion reduces label detachment. Supply continuity helps procurement teams avoid emergency purchasing.</p>
+          <p>The goal is simple: labels should not become the reason fulfillment slows down.</p>
+          <div class="trust-cues"><span>Sample support</span><span>Repeat order clarity</span><span>DDP shipping advice</span><span>Private label options</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h2>Your Fulfillment Should Never Fail Because of Labels</h2>
+          <p>Stable supply. Consistent quality. Predictable operations. Send your label size, quantity, printer type, and destination for a fast recommendation.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="contact.html">Get Free Sample</a>
+            <a class="btn btn-secondary" href="https://wa.me/8619933036333">Talk on WhatsApp</a>
+            <a class="btn btn-light" href="contact.html">Request Quote</a>
+          </div>
+          <div class="cta-trust">Fast response for samples, pricing, and shipping method confirmation.</div>
+        </div>
+      </div>
+    </section>
   </main>
-  <section class="cta-band"><div class="container"><div><h2>Find the right solution for your product category.</h2><p>Tell us what you sell and where you ship. We will help shape a packaging plan.</p></div><a class="btn btn-primary" href="contact.html">Get Packaging Advice</a></div></section>
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo-nav.png" alt="IVLYA"></a><p>One-stop packaging support by product and channel.</p></div><div><h3>Pages</h3><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="faq.html">FAQ</a></div><div><h3>Solutions</h3><p>Apparel</p><p>Beauty</p><p>Jewelry</p><p>3PL</p></div><div><h3>Contact</h3><p>Shijiazhuang Haikuada Technology Co., Ltd.</p><p>Ximei Fifth Avenue, Yuhua District, Shijiazhuang, Hebei Province, China.</p><a class="whatsapp-link" href="https://wa.me/8619933036333">WhatsApp: 8619933036333</a></div></div><div class="container footer-bottom">(c) 2026 IVLYA. All rights reserved.</div></footer>
-  <script src="assets/js/main.js"></script>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><div>Copyright 2026 IVLYA. All Rights Reserved.</div><div><a href="index.html">Home</a> | <a href="contact.html">Contact</a></div></div></div></footer>
 </body>
 </html>

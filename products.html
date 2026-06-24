@@ -3,43 +3,393 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse IVLYA e-commerce packaging products including mailer bags, poly mailers, bubble mailers, boxes, labels, tape, cards, stickers, tissue paper, and inserts.">
-  <title>Products | IVLYA</title>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
+  <title>Products - IVLYA</title>
+  <meta name="description" content="Explore IVLYA direct thermal labels, custom label rolls, and bulk packaging options.">
+  <link rel="icon" type="image/png" href="img/logo-2.png">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7H6PZHX00"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-W7H6PZHX00');
-  </script>
+  <style>
+    .product-hero-grid { align-items: center; display: grid; gap: 44px; grid-template-columns: 1fr .9fr; }
+    .product-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .product-hero-actions .primary-quote { font-size: 17px; min-height: 58px; padding: 0 30px; }
+    .product-hero-media { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+    .product-hero-media img { aspect-ratio: 4 / 3; border-radius: 18px; box-shadow: 0 18px 38px rgba(7, 27, 58, .22); object-fit: cover; width: 100%; }
+    .product-hero-media img:first-child { grid-column: 1 / -1; }
+    .product-trust-bar { display: grid; gap: 16px; grid-template-columns: repeat(4, 1fr); margin-top: -36px; position: relative; z-index: 2; }
+    .product-trust-item { background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); color: var(--primary-dark); font-size: 15px; font-weight: 900; padding: 18px; text-align: center; }
+    .product-summary-grid { display: grid; gap: 22px; grid-template-columns: repeat(4, 1fr); }
+    .quick-buyer-selector { background: #fff; border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); padding: 30px; }
+    .quick-buyer-selector h2 { color: var(--primary-dark); font-size: 32px; margin-bottom: 8px; text-align: center; }
+    .quick-buyer-selector > p { color: var(--muted); margin: 0 auto 24px; max-width: 720px; text-align: center; }
+    .quick-selector-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+    .quick-selector-card { background: linear-gradient(180deg, #fff 0%, #f8fbff 100%); border: 1px solid var(--border); border-radius: 18px; padding: 20px; }
+    .quick-selector-card h3 { color: var(--primary-dark); font-size: 18px; margin-bottom: 14px; }
+    .quick-selector-card div { display: flex; flex-wrap: wrap; gap: 10px; }
+    .quick-selector-card span { background: #eef4ff; border-radius: 999px; color: var(--primary); font-size: 13px; font-weight: 900; padding: 8px 12px; }
+    .quick-selector-action { margin-top: 24px; text-align: center; }
+    .recommended-product { background: linear-gradient(135deg, #fff 0%, #f8fbff 58%, #fff4df 100%); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); padding: 30px; }
+    .recommended-product h2 { color: var(--primary-dark); font-size: 34px; margin-bottom: 14px; }
+    .recommended-product .recommended-title { color: var(--primary-dark); font-size: 24px; font-weight: 900; margin-bottom: 14px; }
+    .recommend-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 24px; }
+    .recommend-badges span { background: #eef4ff; border-radius: 999px; color: var(--primary); font-size: 13px; font-weight: 900; padding: 8px 12px; }
+    .top-size-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-bottom: 30px; }
+    .top-size-card { background: #fff; border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); padding: 22px; }
+    .top-size-card strong { color: var(--primary-dark); display: block; font-size: 20px; margin-bottom: 8px; }
+    .top-size-card span { color: var(--muted); font-size: 14px; font-weight: 800; }
+    .decision-cta { align-items: center; background: #fff; border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow); display: flex; gap: 20px; justify-content: space-between; margin-top: 34px; padding: 26px; }
+    .decision-cta h3 { color: var(--primary-dark); font-size: 26px; margin-bottom: 8px; }
+    .decision-cta p { color: var(--muted); }
+    .faq-list { display: grid; gap: 16px; margin: 0 auto; max-width: 920px; }
+    .faq-item { background: #fff; border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); padding: 22px; }
+    .faq-item h3 { color: var(--primary-dark); font-size: 19px; margin-bottom: 8px; }
+    .faq-item p { color: var(--muted); }
+    .product-final-cta { align-items: center; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); border-radius: 24px; color: #fff; display: flex; gap: 20px; justify-content: space-between; padding: 30px; }
+    .product-final-cta h2 { font-size: 32px; margin-bottom: 8px; }
+    .product-final-cta p { color: rgba(255, 255, 255, .86); }
+    .product-final-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 980px) {
+      .product-hero-grid, .product-summary-grid, .product-trust-bar, .quick-selector-grid { grid-template-columns: 1fr; }
+      .top-size-grid { grid-template-columns: 1fr; }
+      .product-final-cta, .decision-cta { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo-nav.png" alt="IVLYA"></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a class="active" href="products.html">Products</a><a href="solutions.html">Solutions</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></nav></div></header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="IVLYA Home"><img class="logo-img" src="img/logo-1.png" alt="IVLYA"></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><a class="active" href="products.html">Products</a><a href="solutions.html">Solutions</a><a href="about.html">About Us</a><a href="shipping-payment.html">Shipping & Payment</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions"><a class="btn btn-primary" href="contact.html">Request Quote</a><button class="menu-toggle" type="button" aria-label="Open menu" data-menu-toggle><span></span></button></div>
+    </div>
+  </header>
   <main>
-    <section class="page-hero"><div class="container"><p class="eyebrow">Products</p><h1>E-commerce packaging products for shipping, branding, and fulfillment.</h1><p>Choose from custom branded packaging, everyday shipping supplies, product presentation materials, and warehouse essentials.</p></div></section>
-    <section class="section"><div class="container"><div class="grid grid-4">
-      <article class="card product-card"><a class="product-card-link" href="products/custom-mailer-bags.html"><div class="product-media"><img src="img/Custom Mailer Bags.png" alt="Custom Mailer Bags"></div><div class="product-body"><h3>Custom Mailer Bags</h3><p>Printed mailer bags for branded e-commerce shipments and promotional packaging.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/poly-mailers.html"><div class="product-media"><img src="img/Poly Mailers.png" alt="Poly Mailers"></div><div class="product-body"><h3>Poly Mailers</h3><p>Lightweight, durable mailers for apparel, accessories, and soft goods.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/bubble-mailers.html"><div class="product-media"><img src="img/Bubble Mailers.png" alt="Bubble Mailers"></div><div class="product-body"><h3>Bubble Mailers</h3><p>Cushioned mailers for cosmetics, jewelry, electronics accessories, and small fragile items.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/shipping-boxes.html"><div class="product-media"><img src="img/Shipping Boxes.png" alt="Shipping Boxes"></div><div class="product-body"><h3>Shipping Boxes</h3><p>Corrugated boxes for product shipping, subscription kits, and warehouse packing.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/thermal-labels.html"><div class="product-media"><img src="img/Thermal Labels.png" alt="Thermal Labels"></div><div class="product-body"><h3>Thermal Labels</h3><p>Direct thermal labels for shipping, barcodes, SKUs, inventory, and fulfillment workflows.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/thermal-label-printer-compatibility.html"><div class="product-media"><img src="img/Thermal Labels.png" alt="Thermal Label Printer Compatibility Guide"></div><div class="product-body"><h3>Printer Compatibility Guide</h3><p>Match Zebra, Rollo, Munbyn, DYMO, Brother, Honeywell, SATO, TSC, and Bixolon printers with thermal labels.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/packing-tape.html"><div class="product-media"><img src="img/Packing Tape.png" alt="Packing Tape"></div><div class="product-body"><h3>Packing Tape</h3><p>Standard and custom tape for sealing cartons and reinforcing brand presentation.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/thank-you-cards.html"><div class="product-media"><img src="img/Thank You Cards.png" alt="Thank You Cards"></div><div class="product-body"><h3>Thank You Cards</h3><p>Custom cards for post-purchase messages, care notes, discounts, and brand storytelling.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/stickers-labels.html"><div class="product-media"><img src="img/Stickers &amp; Labels.png" alt="Stickers &amp; Labels"></div><div class="product-body"><h3>Stickers & Labels</h3><p>Logo stickers, product labels, sealing labels, and packaging identification labels.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/tissue-paper.html"><div class="product-media"><img src="img/Tissue Paper.png" alt="Tissue Paper"></div><div class="product-body"><h3>Tissue Paper</h3><p>Wrapping paper for apparel, beauty, jewelry, gifts, and premium unboxing experiences.</p></div></a></article>
-      <article class="card product-card"><a class="product-card-link" href="products/packaging-inserts.html"><div class="product-media"><img src="img/Packaging Inserts.png" alt="Packaging Inserts"></div><div class="product-body"><h3>Packaging Inserts</h3><p>Instruction cards, coupons, return notes, subscription inserts, and product guides.</p></div></a></article>
-    </div></div></section>
-    <section class="section section-soft"><div class="container split"><div><p class="eyebrow">Customization</p><h2>Make packaging match your brand and fulfillment flow.</h2><p class="lead">IVLYA can support size selection, material choice, printing requirements, quantity planning, and product combinations for complete packaging sets.</p></div><div class="card"><h3>Popular custom options</h3><ul class="check-list"><li>Logo printing and brand colors</li><li>Size and material recommendations</li><li>Mailer, card, sticker, and insert combinations</li><li>Bulk supply planning for warehouses and 3PLs</li></ul></div></div></section>
+    <section class="page-hero">
+      <div class="container product-hero-grid">
+        <div>
+          <h1>Thermal Shipping Labels for Shopify, Amazon & 3PL Fulfillment</h1>
+          <p>Compatible with Zebra, Rollo, Brother and other major thermal printers. Factory-direct supply with flexible MOQ, global shipping, and fast quotation support.</p>
+          <div class="product-hero-actions">
+            <a class="btn btn-primary primary-quote" href="https://wa.me/8619933036333">Get Instant Quote on WhatsApp</a>
+            <a class="btn btn-outline" href="contact.html">Request Free Sample</a>
+            <a class="btn btn-outline" href="#product-specs">View Specifications</a>
+          </div>
+        </div>
+        <div class="product-hero-media">
+          <img src="img/q3.png" alt="Thermal shipping labels with clear barcode printing">
+          <img src="img/q1.png" alt="Thermal label roll">
+          <img src="img/q2.png" alt="Thermal label applied on carton">
+        </div>
+      </div>
+    </section>
+    <section class="container product-trust-bar">
+      <div class="product-trust-item">✓ 120+ Countries Served</div>
+      <div class="product-trust-item">✓ 7,000+ Global eCommerce Buyers</div>
+      <div class="product-trust-item">✓ Factory Direct Supply</div>
+      <div class="product-trust-item">✓ Fast Global Shipping</div>
+    </section>
+    <section class="section">
+      <div class="container quick-buyer-selector">
+        <h2>Tell Us What You Need — We Recommend the Right Solution</h2>
+        <p>Share your order details and we will recommend the most suitable label type, size, and shipping method within 1 hour.</p>
+        <div class="quick-selector-grid">
+          <div class="quick-selector-card"><h3>Order Type</h3><div><span>Sample Order</span><span>Trial Order</span><span>Bulk Purchase</span></div></div>
+          <div class="quick-selector-card"><h3>Usage Scenario</h3><div><span>Shopify Shipping</span><span>Amazon FBA</span><span>Warehouse Inventory</span><span>3PL Logistics</span></div></div>
+          <div class="quick-selector-card"><h3>Shipping Preference</h3><div><span>DDP (Recommended)</span><span>FOB</span><span>EXW</span><span>Not Sure (We Help You Decide)</span></div></div>
+        </div>
+        <div class="quick-selector-action"><a class="btn btn-primary" href="https://wa.me/8619933036333">Get My Recommendation on WhatsApp</a></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container recommended-product">
+        <h2>Best Seller for Global eCommerce Sellers</h2>
+        <div class="recommended-title">4x6 Thermal Shipping Labels (100 x 150 mm)</div>
+        <p>Most popular size for Shopify and Amazon FBA sellers. Compatible with Zebra, Rollo, and Brother printers, available in waterproof, coated paper, and custom materials, with stable factory supply and fast global delivery.</p>
+        <div class="recommend-badges"><span>Best Seller</span><span>Shopify Recommended</span><span>Amazon FBA Ready</span></div>
+        <a class="btn btn-primary" href="https://wa.me/8619933036333">Ask for This Product on WhatsApp</a>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container split">
+        <div><img src="assets/img/product-rolls.svg" alt="IVLYA product rolls"></div>
+        <div>
+          <h2>4x6 Direct Thermal Shipping Labels</h2>
+          <p>Our core label format is built for high-volume shipping environments that need consistent dark print, clean edges, and strong adhesion on cartons and mailers.</p>
+          <p>Available with multiple core sizes, roll counts, carton configurations, and branded packaging options.</p>
+          <a class="btn btn-primary" href="contact.html">Ask for Samples</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section-blue">
+      <div class="container">
+        <h2 class="section-title">Why This Label Performs Better in Real Operations</h2>
+        <p class="section-subtitle">Built for clear scanning, stable adhesion, and dependable fulfillment performance.</p>
+        <div class="cards-4">
+          <article class="card"><div class="card-icon">🎯</div><h3>Crisp & Reliable Printing</h3><p>Ensures sharp barcode scanning and clear text readability in logistics environments.</p></article>
+          <article class="card"><div class="card-icon">📌</div><h3>Strong Adhesion Performance</h3><p>Sticks firmly to cartons, poly mailers, and warehouse packaging surfaces without peeling.</p></article>
+          <article class="card"><div class="card-icon">🖨️</div><h3>Wide Printer Compatibility</h3><p>Fully compatible with Zebra, Rollo, Brother, and most thermal printers used in eCommerce.</p></article>
+          <article class="card"><div class="card-icon">💧</div><h3>Durable Material Options</h3><p>Available in waterproof, oil-resistant, scratch-resistant, and standard thermal materials.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-blue">
+      <div class="container">
+        <h2 class="section-title">Product Categories for Different Business Needs</h2>
+        <p class="section-subtitle">Choose the product direction that matches your fulfillment workflow.</p>
+        <div class="cards-4">
+          <article class="card"><div class="card-icon">📦</div><h3>Shipping Labels</h3><p>For Shopify, Amazon, and global eCommerce fulfillment.</p></article>
+          <article class="card"><div class="card-icon">🧾</div><h3>Label Rolls</h3><p>Designed for high-efficiency warehouse and logistics operations.</p></article>
+          <article class="card"><div class="card-icon">🏷️</div><h3>Private Label Support</h3><p>OEM and custom branding solutions for growing eCommerce brands.</p></article>
+          <article class="card"><div class="card-icon">✂️</div><h3>Custom Sizes</h3><p>Flexible production for special requirements and industrial use cases.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="product-specs">
+      <div class="container">
+        <h2 class="section-title">Common Product Specifications</h2>
+        <p class="section-subtitle">Choose material, size, and roll quantity based on your printer and usage scenario.</p>
+        <div class="top-size-grid">
+          <div class="top-size-card"><strong>100 x 150 mm</strong><span>Best Seller · Shopify / Amazon FBA shipping labels</span></div>
+          <div class="top-size-card"><strong>100 x 100 mm</strong><span>Warehouse use · carton and inventory labels</span></div>
+          <div class="top-size-card"><strong>70 x 50 mm</strong><span>Logistics use · compact barcode and parcel labels</span></div>
+        </div>
+        <div class="product-filter-panel" data-product-filters>
+          <div class="product-filter-row">
+            <div class="product-filter-label">Material Type</div>
+            <div class="product-filter-buttons">
+              <button class="active" type="button" data-material-filter="all">All Materials</button>
+              <button type="button" data-material-filter="thermal-synthetic">Thermal Synthetic / Waterproof</button>
+              <button type="button" data-material-filter="white-top">White Top Synthetic</button>
+              <button type="button" data-material-filter="coated-paper">Coated Paper</button>
+              <button type="button" data-material-filter="blue-back">Blue Back / Cross-border</button>
+            </div>
+          </div>
+          <div class="product-filter-selects">
+            <label>Size<select data-size-filter><option value="all">All Sizes</option></select></label>
+            <label>Format / Specification<select data-format-filter><option value="all">All Formats</option><option value="roll-pack">Roll Pack</option><option value="500-labels">500 Labels</option><option value="800-labels">800 Labels</option><option value="1000-plus">1000+ Labels</option><option value="perforated">Easy-tear / Perforated</option></select></label>
+          </div>
+        </div>
+        <div class="product-spec-grid" data-product-spec-grid>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 30 mm" data-format="800-labels"><span>Premium three-proof labels · 40 x 30 mm · 800 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="white-top" data-size="100 x 100 mm" data-format="500-labels perforated"><span>Premium white-back three-proof labels · 100 x 100 mm · 500 labels · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="white-top" data-size="100 x 150 mm" data-format="perforated"><span>Premium white-back three-proof labels · 100 x 150 mm · 350 labels · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="white-top" data-size="100 x 150 mm" data-format="500-labels perforated"><span>Premium white-back three-proof labels · 100 x 150 mm · 500 labels · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="white-top" data-size="40 x 30 mm" data-format="roll-pack 800-labels"><span>White-back three-proof labels · 40 x 30 mm · 800 labels · 5 rolls</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="white-top" data-size="50 x 30 mm" data-format="roll-pack 1000-plus"><span>White-back three-proof labels · 50 x 30 mm · 1000 labels · 4 rolls</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="white-top" data-size="60 x 40 mm" data-format="roll-pack 800-labels"><span>White-back three-proof labels · 60 x 40 mm · 800 labels · 3 rolls</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="blue-back" data-size="100 x 100 mm" data-format="500-labels perforated"><span>Cross-border blue-back three-proof labels · 100 x 100 mm · 500 labels · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="blue-back" data-size="100 x 150 mm" data-format="perforated"><span>Cross-border blue-back three-proof labels · 100 x 150 mm · 300 labels · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="blue-back" data-size="100 x 150 mm" data-format="500-labels perforated"><span>Cross-border blue-back three-proof labels · 100 x 150 mm · 500 labels · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="30 x 20 mm" data-format="1000-plus"><span>Premium three-proof labels · 30 x 20 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="30 x 40 mm" data-format="800-labels"><span>Premium three-proof labels · 30 x 40 mm · 800 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 20 mm" data-format="1000-plus"><span>Premium three-proof labels · 40 x 20 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 30 mm" data-format="1000-plus"><span>Premium three-proof labels · 40 x 30 mm · 1350 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 40 mm" data-format="standard"><span>Premium three-proof labels · 40 x 40 mm · 600 labels · Square</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 50 mm" data-format="500-labels"><span>Premium three-proof labels · 40 x 50 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 60 mm" data-format="500-labels"><span>Premium three-proof labels · 40 x 60 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 70 mm" data-format="500-labels"><span>Premium three-proof labels · 40 x 70 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="40 x 80 mm" data-format="500-labels"><span>Premium three-proof labels · 40 x 80 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="50 x 20 mm" data-format="500-labels 1000-plus"><span>Premium three-proof labels · 50 x 20 mm · 1500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="50 x 30 mm" data-format="1000-plus"><span>Premium three-proof labels · 50 x 30 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="50 x 30 mm" data-format="1000-plus"><span>Premium three-proof labels · 50 x 30 mm · 1350 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="50 x 40 mm" data-format="800-labels"><span>Premium three-proof labels · 50 x 40 mm · 800 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="50 x 50 mm" data-format="800-labels"><span>Premium three-proof labels · 50 x 50 mm · 800 labels · Square</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="50 x 70 mm" data-format="500-labels"><span>Premium three-proof labels · 50 x 70 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="50 x 80 mm" data-format="500-labels"><span>Premium three-proof labels · 50 x 80 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="58 x 40 mm" data-format="roll-pack 800-labels"><span>Premium three-proof labels · 58 x 40 mm · 800 labels · 3 rolls · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 30 mm" data-format="1000-plus"><span>Premium three-proof labels · 60 x 30 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 40 mm" data-format="800-labels"><span>Premium three-proof labels · 60 x 40 mm · 800 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 40 mm" data-format="1000-plus"><span>Premium three-proof labels · 60 x 40 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 50 mm" data-format="500-labels"><span>Premium three-proof labels · 60 x 50 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 50 mm" data-format="standard"><span>Premium three-proof labels · 60 x 50 mm · 950 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 60 mm" data-format="500-labels"><span>Premium three-proof labels · 60 x 60 mm · 500 labels · Square</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 60 mm" data-format="800-labels"><span>Premium three-proof labels · 60 x 60 mm · 800 labels · Square</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="60 x 80 mm" data-format="500-labels"><span>Premium three-proof labels · 60 x 80 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 20 mm" data-format="roll-pack 1000-plus"><span>Premium three-proof labels · 70 x 20 mm · 1000 labels · 3 rolls · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 20 mm" data-format="1000-plus"><span>Premium three-proof labels · 70 x 20 mm · 2000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 30 mm" data-format="roll-pack 1000-plus"><span>Premium three-proof labels · 70 x 30 mm · 1000 labels · 3 rolls · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 30 mm" data-format="1000-plus"><span>Premium three-proof labels · 70 x 30 mm · 2000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 40 mm" data-format="1000-plus"><span>Premium three-proof labels · 70 x 40 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 50 mm" data-format="500-labels"><span>Premium three-proof labels · 70 x 50 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 50 mm" data-format="standard"><span>Premium three-proof labels · 70 x 50 mm · 850 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 60 mm" data-format="500-labels"><span>Premium three-proof labels · 70 x 60 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 60 mm" data-format="800-labels"><span>Premium three-proof labels · 70 x 60 mm · 800 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 70 mm" data-format="standard"><span>Premium three-proof labels · 70 x 70 mm · 550 labels · Square</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 80 mm" data-format="500-labels"><span>Premium three-proof labels · 70 x 80 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 90 mm" data-format="500-labels"><span>Premium three-proof labels · 70 x 90 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="70 x 100 mm" data-format="500-labels"><span>Premium three-proof labels · 70 x 100 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="75 x 50 mm" data-format="500-labels"><span>Premium three-proof labels · 75 x 50 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="75 x 100 mm" data-format="standard"><span>Premium three-proof labels · 75 x 100 mm · 250 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 30 mm" data-format="roll-pack 1000-plus"><span>Premium three-proof labels · 80 x 30 mm · 1000 labels · 2 rolls · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 40 mm" data-format="800-labels"><span>Premium three-proof labels · 80 x 40 mm · 800 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 50 mm" data-format="500-labels"><span>Premium three-proof labels · 80 x 50 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 50 mm" data-format="standard"><span>Premium three-proof labels · 80 x 50 mm · 960 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 60 mm" data-format="800-labels"><span>Premium three-proof labels · 80 x 60 mm · 800 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 70 mm" data-format="500-labels"><span>Premium three-proof labels · 80 x 70 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 80 mm" data-format="500-labels"><span>Premium three-proof labels · 80 x 80 mm · 500 labels · Square</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="80 x 100 mm" data-format="500-labels"><span>Premium three-proof labels · 80 x 100 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="90 x 60 mm" data-format="500-labels"><span>Premium three-proof labels · 90 x 60 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="90 x 70 mm" data-format="500-labels"><span>Premium three-proof labels · 90 x 70 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 30 mm" data-format="1000-plus"><span>Premium three-proof labels · 100 x 30 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 40 mm" data-format="1000-plus"><span>Premium three-proof labels · 100 x 40 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 50 mm" data-format="1000-plus"><span>Premium three-proof labels · 100 x 50 mm · 1000 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 60 mm" data-format="500-labels"><span>Premium three-proof labels · 100 x 60 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 70 mm" data-format="500-labels"><span>Premium three-proof labels · 100 x 70 mm · 500 labels · Landscape</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 80 mm" data-format="500-labels perforated"><span>Premium three-proof labels · 100 x 80 mm · 500 labels · Landscape · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 120 mm" data-format="500-labels"><span>Premium three-proof labels · 100 x 120 mm · 500 labels · Portrait</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 180 mm" data-format="500-labels perforated"><span>Premium three-proof labels · 100 x 180 mm · 500 labels · Portrait · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+          <div class="product-spec-item" data-material="thermal-synthetic" data-size="100 x 200 mm" data-format="perforated"><span>Premium three-proof labels · 100 x 200 mm · 300 labels · Portrait · Easy-tear perforation</span><a href="https://wa.me/8619933036333">Ask for Quote</a></div>
+        </div>
+        <p class="product-spec-note">If you need other sizes, roll counts, private-label cartons, or printer-specific matching, contact IVLYA for a fast recommendation.</p>
+        <div style="text-align:center; margin-top: 24px;"><a class="btn btn-primary" href="https://wa.me/8619933036333">Need Help Choosing Specifications? Talk to Us</a></div>
+        <div class="decision-cta">
+          <div>
+            <h3>Not Sure Which One to Choose?</h3>
+            <p>We will recommend the best product + shipping method for you. Response in 1 hour.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/8619933036333">Talk on WhatsApp Now</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section-blue">
+      <div class="container">
+        <h2 class="section-title">Flexible Shipping Options for Global Buyers</h2>
+        <p class="section-subtitle">We recommend shipping methods based on your experience, order size, and delivery requirements.</p>
+        <div class="product-summary-grid">
+          <article class="card"><div class="card-icon">🚚</div><h3>DDP (Recommended)</h3><p>Door-to-door delivery with customs clearance and taxes included. Ideal for Shopify, Amazon, and first-time importers.</p></article>
+          <article class="card"><div class="card-icon">🚢</div><h3>FOB</h3><p>We handle production and export clearance; you manage freight from port. Best for experienced importers optimizing logistics cost.</p></article>
+          <article class="card"><div class="card-icon">🏭</div><h3>EXW</h3><p>Factory pickup with full buyer-controlled logistics. Best for buyers with their own freight forwarders.</p></article>
+          <article class="card"><div class="card-icon">✈️</div><h3>Express Delivery</h3><p>Fast courier service for samples and urgent replenishment orders.</p></article>
+        </div>
+        <div class="decision-cta">
+          <div><h3>Not sure which to choose?</h3><p>We recommend DDP for most eCommerce sellers.</p></div>
+          <a class="btn btn-primary" href="https://wa.me/8619933036333">Get Shipping Recommendation on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Secure Global Payment Options</h2>
+        <p class="section-subtitle">We support flexible and secure payment methods for global eCommerce buyers.</p>
+        <div class="cards-3">
+          <article class="card"><div class="card-icon">💳</div><h3>PayPal</h3><p>Best for samples and small trial orders with fast processing.</p></article>
+          <article class="card"><div class="card-icon">🌐</div><h3>WorldFirst</h3><p>Fast and secure cross-border B2B payment solution under the Ant Group ecosystem.</p></article>
+          <article class="card"><div class="card-icon">🏦</div><h3>Bank Transfer (T/T)</h3><p>Preferred for bulk orders and long-term B2B cooperation.</p></article>
+        </div>
+        <p class="product-spec-note">All payments are processed securely to ensure safe international transactions.</p>
+      </div>
+    </section>
+    <section class="section section-blue">
+      <div class="container">
+        <h2 class="section-title">Where Our Labels Are Used</h2>
+        <div class="cards-4">
+          <article class="card"><div class="card-icon">🛍️</div><h3>Shopify Shipping Labels</h3><p>Daily order fulfillment for DTC brands.</p></article>
+          <article class="card"><div class="card-icon">📦</div><h3>Amazon FBA Labels</h3><p>FNSKU, carton labels, and logistics identification.</p></article>
+          <article class="card"><div class="card-icon">🏷️</div><h3>Warehouse Inventory</h3><p>Shelf labeling, SKU tracking, and warehouse management.</p></article>
+          <article class="card"><div class="card-icon">🚛</div><h3>3PL Logistics</h3><p>Cross-border fulfillment and third-party logistics operations.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Manufacturing & Supply Strength</h2>
+        <p class="section-subtitle">Factory-backed production and inventory support for stable long-term B2B supply.</p>
+        <div class="cards-3">
+          <article class="scenario-card"><img src="img/2.jpg" alt="Production workshop"><div class="scenario-content"><h3>Production Workshop</h3><p>Stable production lines ensure consistent quality and fast output.</p></div></article>
+          <article class="scenario-card"><img src="img/004.jpg" alt="Raw material inventory"><div class="scenario-content"><h3>Raw Material Inventory</h3><p>Sufficient raw materials ensure uninterrupted production capacity.</p></div></article>
+          <article class="scenario-card"><img src="img/003.jpg" alt="Finished goods inventory"><div class="scenario-content"><h3>Finished Goods Stock</h3><p>Ready stock system supports fast dispatch and reduced lead time.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-blue">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item"><h3>What is your MOQ?</h3><p>We support flexible MOQ including sample and trial orders.</p></div>
+          <div class="faq-item"><h3>Can I request samples?</h3><p>Yes, we provide samples for testing print quality, adhesion, and compatibility.</p></div>
+          <div class="faq-item"><h3>Which shipping method is best for Shopify sellers?</h3><p>We recommend DDP for most Shopify and Amazon sellers.</p></div>
+          <div class="faq-item"><h3>Do you support custom sizes?</h3><p>Yes, we support custom sizes and OEM/private label services.</p></div>
+          <div class="faq-item"><h3>How fast can I get a quote?</h3><p>We usually respond within 1 hour via WhatsApp.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-blue">
+      <div class="container product-final-cta">
+        <div>
+          <h2>Need Price, Sample, or Shipping Recommendation?</h2>
+          <p>Send us your product size, quantity, and destination. We will recommend the best solution and reply within 1 hour.</p>
+        </div>
+        <div class="product-final-actions">
+          <a class="btn btn-primary" href="https://wa.me/8619933036333">Get Instant Quote</a>
+          <a class="btn btn-outline" href="contact.html">Request Free Sample</a>
+          <a class="btn btn-outline" href="https://wa.me/8619933036333">Ask for Recommendation</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <section class="cta-band"><div class="container"><div><h2>Looking for a specific packaging item?</h2><p>Send your product, quantity, and customization request for a tailored quote.</p></div><a class="btn btn-primary" href="contact.html">Request a Quote</a></div></section>
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo-nav.png" alt="IVLYA"></a><p>Packaging products for growing e-commerce brands.</p></div><div><h3>Pages</h3><a href="index.html">Home</a><a href="about.html">About Us</a><a href="solutions.html">Solutions</a><a href="faq.html">FAQ</a></div><div><h3>Products</h3><p>Mailers</p><p>Boxes</p><p>Labels</p><p>Brand inserts</p></div><div><h3>Contact</h3><p>Shijiazhuang Haikuada Technology Co., Ltd.</p><p>Ximei Fifth Avenue, Yuhua District, Shijiazhuang, Hebei Province, China.</p><a class="whatsapp-link" href="https://wa.me/8619933036333">WhatsApp: 8619933036333</a></div></div><div class="container footer-bottom">(c) 2026 IVLYA. All rights reserved.</div></footer>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><div>Copyright 2026 IVLYA. All Rights Reserved.</div><div><a href="index.html">Home</a> | <a href="contact.html">Contact</a></div></div></div></footer>
   <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      var panel = document.querySelector("[data-product-filters]");
+      var items = Array.prototype.slice.call(document.querySelectorAll("[data-material][data-size][data-format]"));
+      if (!panel || !items.length) return;
+      var materialButtons = Array.prototype.slice.call(panel.querySelectorAll("[data-material-filter]"));
+      var sizeSelect = panel.querySelector("[data-size-filter]");
+      var formatSelect = panel.querySelector("[data-format-filter]");
+      var grid = document.querySelector("[data-product-spec-grid]");
+      var empty = document.createElement("div");
+      empty.className = "product-empty-state";
+      empty.textContent = "No matching specification found. Contact IVLYA for custom label sizes.";
+      grid.parentNode.insertBefore(empty, grid.nextSibling);
+
+      var sizes = items.map(function (item) { return item.getAttribute("data-size"); }).filter(Boolean).filter(function (value, index, array) { return array.indexOf(value) === index; });
+      sizes.sort(function (a, b) {
+        var aw = parseInt(a, 10) || 0;
+        var bw = parseInt(b, 10) || 0;
+        return aw - bw || a.localeCompare(b);
+      });
+      sizes.forEach(function (size) {
+        var option = document.createElement("option");
+        option.value = size;
+        option.textContent = size;
+        sizeSelect.appendChild(option);
+      });
+
+      var activeMaterial = "all";
+      function applyFilters() {
+        var size = sizeSelect.value;
+        var format = formatSelect.value;
+        var visible = 0;
+        items.forEach(function (item) {
+          var materialMatch = activeMaterial === "all" || item.getAttribute("data-material") === activeMaterial;
+          var sizeMatch = size === "all" || item.getAttribute("data-size") === size;
+          var formats = (item.getAttribute("data-format") || "").split(" ");
+          var formatMatch = format === "all" || formats.indexOf(format) !== -1;
+          var show = materialMatch && sizeMatch && formatMatch;
+          item.style.display = show ? "block" : "none";
+          if (show) visible += 1;
+        });
+        empty.style.display = visible ? "none" : "block";
+      }
+
+      materialButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          activeMaterial = button.getAttribute("data-material-filter");
+          materialButtons.forEach(function (item) { item.classList.remove("active"); });
+          button.classList.add("active");
+          applyFilters();
+        });
+      });
+      sizeSelect.addEventListener("change", applyFilters);
+      formatSelect.addEventListener("change", applyFilters);
+      applyFilters();
+    })();
+  </script>
 </body>
 </html>
+
+
+
+
+
